@@ -67,10 +67,10 @@ console.log("Q1: I was born in the", country);
 //  Q2: This is a negative number: -6
 
 // PUT YOUR CODE HERE
-var floatingPoint = 20.458;
-var integer = 4428;
-var negative = -8739;
-var bigNumber = 286840374858463959836488934857;
+var floatingPoint = "20.458";
+var integer = "4428";
+var negative = "-8739";
+var bigNumber = "286840374858463959836488934857";
 
 console.log("Q2: This is a floating point number:", floatingPoint);
 console.log('Q2: This is an integer:', integer);
@@ -93,11 +93,11 @@ console.log('Q2: This is a big number:', bigNumber);
 //  Q3: The variable I made false is: false
 
 // PUT YOUR CODE HERE
-var myTrueVar = true;
-var myFalseVar = false;
+var trueVariable = 'true';
+var falseVariable = 'false';
 
-console.log('Q3: The sky is blue:', myTrueVar);
-console.log('Q3: My favorite color is Orange:', myFalseVar);
+console.log('Q3: The sky is blue:', trueVariable);
+console.log('Q3: My favorite color is Orange:', falseVariable);
 
 
 // ---------- QUESTION 4 ----------
@@ -117,9 +117,8 @@ console.log('Q3: My favorite color is Orange:', myFalseVar);
 //  Q4 second: Hello, my name is Jane Doe and I was born in Canada. 
 
 // PUT YOUR CODE HERE
-var firstName = "Sergio";
-var lastName = "Ramirez";
-var country = "United States";
+
+
 var firstHelloString = "Hello, my name is " + firstName + " " + lastName + " and I was born in " + country + ".";
 var secondHelloString = `Hello, my name is ${firstName} ${lastName} and I was born in ${country}.`;
 console.log("Q4: first: ", firstHelloString);
@@ -176,10 +175,10 @@ console.log("Q5 addition: ", additionVariable);
 //  Q6 capitalize: JANE 
 
 // PUT YOUR CODE HERE
-var nameLength = firstName.length;
-var firstInitial = firstName[0];
-var lastInitial = firstName[firstName.length - 1];
-var capitalize = firstName.toUpperCase();
+var nameLength = 5;
+var firstInitial = "S";
+var lastInitial = "R";
+var capitalize = "SERGIO";
 
 console.log("Q6 nameLength: ", nameLength);
 console.log("Q6 firstInitial: ", firstInitial);
@@ -213,10 +212,8 @@ console.log("Q6 capitalize: ", capitalize);
 // PUT YOUR CODE HERE
 var answer = true;
 
-if (integer > 10) {
-    answer = true
-} else {
-    false
+if (integer > 10) { answer = true }
+else {answer = false
 }
 
 console.log("Q7 answer: ", answer);

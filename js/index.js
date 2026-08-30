@@ -34,7 +34,12 @@ for (let i = 0; i < skills.length; i++) {
 }
 
 fetch("https://api.github.com/users/sergiojramirez/repos")
-    .then((response) => response.json())
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error(`GitHub API error: ${response.status}`);
+        }
+        return response.json();
+    })
     .then((data) => {
         const repositories = data;
         console.log(repositories);
@@ -50,6 +55,14 @@ fetch("https://api.github.com/users/sergiojramirez/repos")
     })
     .catch((error) => {
         console.error("There was an error fetching the repositories:", error);
+
+        const projectSection = document.querySelector("#projects");
+        const errorMessage = document.createElement("p");
+
+        errorMessage.innerText =
+            "Sorry, we were unable to load the projects at this time.";
+
+        projectSection.appendChild(errorMessage);
     });
 
 

@@ -33,6 +33,9 @@ for (let i = 0; i < skills.length; i++) {
     skillsList.appendChild(skill);
 }
 
+const projectSection = document.querySelector("#projects");
+const projectList = projectSection.querySelector("ul");
+
 fetch("https://api.github.com/users/sergiojramirez/repos")
     .then((response) => {
         if (!response.ok) {
@@ -44,9 +47,6 @@ fetch("https://api.github.com/users/sergiojramirez/repos")
         const repositories = data;
         console.log(repositories);
 
-        const projectSection = document.querySelector("#projects");
-        const projectList = projectSection.querySelector("ul");
-
         for (let i = 0; i < repositories.length; i++) {
             const project = document.createElement("li");
             project.innerText = repositories[i]["name"];
@@ -56,7 +56,7 @@ fetch("https://api.github.com/users/sergiojramirez/repos")
     .catch((error) => {
         console.error("There was an error fetching the repositories:", error);
 
-        const projectSection = document.querySelector("#projects");
+        
         const errorMessage = document.createElement("p");
 
         errorMessage.innerText =

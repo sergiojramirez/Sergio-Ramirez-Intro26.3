@@ -16,6 +16,7 @@
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#connect">Connect</a>
+        <a href="#leave-message">Leave a Message</a>
     </nav>
 </header>
 
@@ -70,12 +71,12 @@
 
 <section id="skills">
     <h2>Skills</h2>
+    <ul></ul>
 </section>
 
 <section id="projects">
     <h2>Projects</h2>
-    <ul>
-    </ul>
+    <ul></ul>
 </section>
 
 <section id="connect">
@@ -89,12 +90,49 @@
         </li>
 
         <li>
-            <a href="https://github.com/sergioramirezII" target="_blank">
+            <a href="https://github.com/sergiojramirez" target="_blank">
                 GitHub
             </a>
         </li>
     </ul>
 </section>
+
+
+<section id="leave-message">
+    <h2>Leave a Message</h2>
+
+    <form name="leave_message">
+        <label>
+            Name:
+            <input type="text" name="usersName" required>
+        </label>
+
+        <br>
+
+        <label>
+            Email:
+            <input type="email" name="usersEmail" required>
+        </label>
+
+        <br>
+
+        <label>
+            Message:
+            <textarea name="usersMessage" required></textarea>
+        </label>
+
+        <br>
+
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<section id="messages">
+    <h2>Messages</h2>
+    <ul></ul>
+</section>
+
+<script src="js/index.js"></script>
 
 </body>
 </html>

@@ -88,3 +88,4 @@ messageForm.addEventListener('submit', function(event) {
 
     event.target.reset();
 });
+}

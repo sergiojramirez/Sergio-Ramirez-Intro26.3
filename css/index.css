@@ -90,3 +90,16 @@ h2 {
 #connect a:hover {
     text-decoration: underline;
 }
+
+#skills ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0;
+}
+
+#skills li {
+    padding: 10px;
+    list-style: none;
+}

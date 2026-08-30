@@ -4,17 +4,20 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
 }
+
 nav {
     background-color: #222222;
     padding: 15px;
     text-align: center;
 }
+
 nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
     margin: 0 15px;
 }
+
 nav a:hover {
     text-decoration: underline;
 }
@@ -25,12 +28,14 @@ h1 {
     color: #ec0e0e;
     margin: 40px 0 30px;
 }
+
 section {
     background-color: white;
     margin: 25px auto;
     padding: 25px;
     max-width: 900px;
 }
+
 h2 {
     font-size: 28px;
     font-weight: bold;
@@ -38,55 +43,59 @@ h2 {
     border-bottom: 2px solid #1f4e79;
     padding-bottom: 8px;
 }
+
 #experience ul {
     display: flex;
     flex-direction: column;
     gap: 15px;
     padding: 0;
 }
+
 #experience li {
     background-color: #eef3f7;
     padding: 20px;
     list-style: none;
     border-radius: 8px;
 }
+
 .experience-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .experience-header span {
     color: #666666;
     font-size: 14px;
     font-weight: normal;
 }
+
 #experience h3 {
     margin-top: 0;
     color: #1f4e79;
 }
+
 #connect {
     text-align: center;
 }
+
 #connect ul {
     display: flex;
     justify-content: center;
     gap: 30px;
     padding: 0;
 }
-#connect ul {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 0;
-}
+
 #connect li {
     list-style: none;
 }
+
 #connect a {
     color: #1f4e79;
     font-weight: bold;
     text-decoration: none;
 }
+
 #connect a:hover {
     text-decoration: underline;
 }
@@ -102,4 +111,44 @@ h2 {
 #skills li {
     padding: 10px;
     list-style: none;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 15px;
+}
+
+form input,
+form textarea {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#messages li {
+    margin-bottom: 15px;
+}
+
+#messages button {
+    margin-left: 10px;
+    padding: 5px 10px;
 }

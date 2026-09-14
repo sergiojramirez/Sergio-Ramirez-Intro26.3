@@ -2,7 +2,7 @@ const matchesButton = document.querySelector("#matches-button");
 const standingsButton = document.querySelector("#standings-button");
 const apiData = document.querySelector("#api-data");
 
-const API_KEY = "76086c439596a6afbe6916248385dd6b";
+const API_KEY = "f1e350e00840cfb53b50c447fd774787";
 
 const matchesURL =
     "https://v3.football.api-sports.io/fixtures?league=39&season=2024";

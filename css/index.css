@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     background-color: #f4f7f9;
     color: #000000;
@@ -5,11 +6,13 @@ body {
     margin: 0;
 }
 
+/* Navigation */
 nav {
     background-color: #222222;
     padding: 15px;
     text-align: center;
 }
+
 
 nav a {
     color: white;
@@ -43,7 +46,7 @@ h2 {
     border-bottom: 2px solid #1f4e79;
     padding-bottom: 8px;
 }
-
+/* Experience Section */
 #experience ul {
     display: flex;
     flex-direction: column;
@@ -75,6 +78,7 @@ h2 {
     color: #1f4e79;
 }
 
+/* Connect Section */
 #connect {
     text-align: center;
 }
@@ -100,6 +104,7 @@ h2 {
     text-decoration: underline;
 }
 
+/* Skills Section */
 #skills ul {
     display: flex;
     flex-direction: row;
@@ -113,6 +118,7 @@ h2 {
     list-style: none;
 }
 
+/* Message Form */
 form {
     margin-top: 20px;
 }
@@ -153,6 +159,7 @@ form button {
     padding: 5px 10px;
 }
 
+/* Projects Section */
 #projects ul {
     display: flex;
     flex-wrap: wrap;
@@ -168,6 +175,7 @@ form button {
     border: 1px solid #ccc;
 }
 
+/* Mobile Styles */
 @media (max-width: 600px) {
     nav a {
         display: block;

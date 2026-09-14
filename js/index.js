@@ -11,19 +11,23 @@ const footer = document.querySelector("footer");
 
 const copyright = document.createElement("p");
 
-copyright.innerHTML = `@ Sergio Ramirez ${thisYear}`;
-
+copyright.innerHTML = `© Sergio Ramirez ${thisYear}`;
 footer.appendChild(copyright);
 
 const skills = [
     "JavaScript",
     "HTML",
     "CSS",
+    "Git",
     "GitHub",
     "Salesforce",
-    "Tableau"
+    "Tableau",
+    "B2B Sales",
+    "Technical Recruiting",
+    "Data Analysis"
 ];
 
+//skills section
 const skillsSection = document.querySelector("#skills");
 const skillsList = skillsSection.querySelector("ul");
 
@@ -36,6 +40,7 @@ for (let i = 0; i < skills.length; i++) {
 const projectSection = document.querySelector("#projects");
 const projectList = projectSection.querySelector("ul");
 
+// Fetch GitHub repositories
 fetch("https://api.github.com/users/sergiojramirez/repos")
     .then((response) => {
         if (!response.ok) {
@@ -86,6 +91,7 @@ messageForm.addEventListener('submit', function(event) {
 
     const removeButton = document.createElement('button');
 
+//remove button
     removeButton.innerText = 'remove';
 
     removeButton.setAttribute('type', 'button');
@@ -94,7 +100,7 @@ messageForm.addEventListener('submit', function(event) {
         const entry = removeButton.parentNode;
         entry.remove();
     });
-
+//new message
     newMessage.appendChild(removeButton);
 
     messageList.appendChild(newMessage);

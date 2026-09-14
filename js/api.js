@@ -4,30 +4,39 @@ const apiData = document.querySelector("#api-data");
 
 const API_KEY = "76086c439596a6afbe6916248385dd6b";
 
-const API_URL = "https://v3.football.api-sports.io/fixtures?league=39&season=2024";
+const matchesURL =
+    "https://v3.football.api-sports.io/fixtures?league=39&season=2024";
+
+const standingsURL =
+    "https://v3.football.api-sports.io/standings?league=39&season=2024";
 
 matchesButton.addEventListener("click", () => {
-    console.log("Matches button was clicked!");
+    apiData.innerHTML = "<h2>Matches</h2><p>Loading matches...</p>";
 
-    fetch(API_URL, {
+// Fetch matches data from the API
+    fetch(matchesURL, {
         method: "GET",
         headers: {
             "x-apisports-key": API_KEY
         }
     })
-        .then(response => {
-            console.log("Status:", response.status);
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`Matches request failed: ${response.status}`);
+            }
+
             return response.json();
         })
-        .then(data => {
-            console.log("API Response:", data);
-            console.log("Results:", data.results);
-            console.log("Response:", data.response);
-            console.log("Errors:", data.errors);
+        .then((data) => {
+            if (!data.response || data.response.length === 0) {
+                apiData.innerHTML =
+                    "<h2>Matches</h2><p>No matches were found.</p>";
+                return;
+            }
 
             apiData.innerHTML = "<h2>Matches</h2>";
 
-            data.response.forEach(match => {
+            data.response.forEach((match) => {
                 const matchElement = document.createElement("p");
 
                 matchElement.textContent =
@@ -36,16 +45,18 @@ matchesButton.addEventListener("click", () => {
                 apiData.appendChild(matchElement);
             });
         })
-        .catch(error => {
+        .catch((error) => {
             console.error("Error fetching matches:", error);
+
+            apiData.innerHTML =
+                "<h2>Matches</h2><p>Unable to load matches. Please try again.</p>";
         });
 });
 
+// Standings button click event
 standingsButton.addEventListener("click", () => {
-    console.log("Standings button was clicked!");
-
-    const standingsURL =
-        "https://v3.football.api-sports.io/standings?league=39&season=2024";
+    apiData.innerHTML =
+        "<h2>Premier League Standings</h2><p>Loading standings...</p>";
 
     fetch(standingsURL, {
         method: "GET",
@@ -53,16 +64,27 @@ standingsButton.addEventListener("click", () => {
             "x-apisports-key": API_KEY
         }
     })
-        .then(response => {
-            console.log("Status:", response.status);
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`Standings request failed: ${response.status}`);
+            }
+
             return response.json();
         })
-        .then(data => {
-            console.log("Standings API Response:", data);
-
-            apiData.innerHTML = "<h2>Premier League Standings</h2>";
+        .then((data) => {
+            if (
+                !data.response ||
+                data.response.length === 0 ||
+                !data.response[0].league.standings
+            ) {
+                apiData.innerHTML =
+                    "<h2>Premier League Standings</h2><p>No standings were found.</p>";
+                return;
+            }
 
             const standings = data.response[0].league.standings[0];
+
+            apiData.innerHTML = "<h2>Premier League Standings</h2>";
 
             standings.forEach((team, index) => {
                 const teamElement = document.createElement("p");
@@ -73,7 +95,10 @@ standingsButton.addEventListener("click", () => {
                 apiData.appendChild(teamElement);
             });
         })
-        .catch(error => {
+        .catch((error) => {
             console.error("Error fetching standings:", error);
+
+            apiData.innerHTML =
+                "<h2>Premier League Standings</h2><p>Unable to load standings. Please try again.</p>";
         });
 });
